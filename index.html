@@ -109,9 +109,6 @@
         <!-- CTA Button -->
         <a href="#contact" class="gradient-button animate-appear delay-500">
             <span>Richiedi Demo</span>
-            <svg class="btn-arrow" width="20" height="20" viewBox="0 0 36 15" fill="none">
-                <path d="M35.7071 8.20711C36.0976 7.81658 36.0976 7.18342 35.7071 6.79289L29.3431 0.428932C28.9526 0.0384078 28.3195 0.0384078 27.9289 0.428932C27.5384 0.819457 27.5384 1.45262 27.9289 1.84315L33.5858 7.5L27.9289 13.1569C27.5384 13.5474 27.5384 14.1805 27.9289 14.5711C28.3195 14.9616 28.9526 14.9616 29.3431 14.5711L35.7071 8.20711ZM0 8.5H35V6.5H0V8.5Z" fill="currentColor"/>
-            </svg>
         </a>
 
         <!-- Mockup Section -->
@@ -152,7 +149,13 @@
             <!-- Features Grid -->
             <div class="features-grid">
                 <div class="feature-card animate-appear delay-100">
-                    <div class="feature-icon">🎯</div>
+                    <div class="feature-icon">
+                      <!-- Search Icon -->
+                      <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                      </svg>
+                    </div>
                     <h3 class="feature-title">SEO Ottimizzato</h3>
                     <p class="feature-description">Migliora la visibilità sui motori di ricerca per attrarre clienti locali nella tua zona</p>
                     <div class="feature-stat">
@@ -161,18 +164,13 @@
                     </div>
                 </div>
                 
-                <div class="feature-card animate-appear delay-200">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Design Responsive</h3>
-                    <p class="feature-description">Il tuo sito funziona perfettamente su tutti i dispositivi, dal mobile al desktop</p>
-                    <div class="feature-stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Mobile-friendly</span>
-                    </div>
-                </div>
-                
                 <div class="feature-card animate-appear delay-300">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon">
+                      <!-- Shield Icon -->
+                      <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      </svg>
+                    </div>
                     <h3 class="feature-title">Veloce e Sicuro</h3>
                     <p class="feature-description">Tempi di caricamento ottimizzati e massima sicurezza dei dati sensibili</p>
                     <div class="feature-stat">
@@ -182,7 +180,13 @@
                 </div>
                 
                 <div class="feature-card animate-appear delay-400">
-                    <div class="feature-icon">💼</div>
+                    <div class="feature-icon">
+                      <!-- Briefcase Icon -->
+                      <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <rect x="2" y="7" width="20" height="14" rx="2"/>
+                        <path d="M16 3v4M8 3v4M2 13h20"/>
+                      </svg>
+                    </div>
                     <h3 class="feature-title">Contenuti Professionali</h3>
                     <p class="feature-description">Testi e struttura pensati per studi di commercialisti e avvocati</p>
                     <div class="feature-stat">
@@ -273,10 +277,10 @@
             
             <!-- Pricing Grid -->
             <div class="pricing-grid">
-                <!-- Pro Package -->
+                <!-- Standard Package -->
                 <div class="pricing-card animate-appear delay-100">
                     <div class="pricing-header">
-                        <h3 class="pricing-title">Pro</h3>
+                        <h3 class="pricing-title">Standard</h3>
                         <div class="pricing-price">
                             <span class="price-currency">€</span>
                             <span class="price-amount">1.299</span>
@@ -296,18 +300,15 @@
                     </ul>
                     
                     <a href="#contact" class="pricing-cta">
-                        <span>Scegli Pro</span>
-                        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 36 15" fill="none">
-                            <path d="M35.7071 8.20711C36.0976 7.81658 36.0976 7.18342 35.7071 6.79289L29.3431 0.428932C28.9526 0.0384078 28.3195 0.0384078 27.9289 0.428932C27.5384 0.819457 27.5384 1.45262 27.9289 1.84315L33.5858 7.5L27.9289 13.1569C27.5384 13.5474 27.5384 14.1805 27.9289 14.5711C28.3195 14.9616 28.9526 14.9616 29.3431 14.5711L35.7071 8.20711ZM0 8.5H35V6.5H0V8.5Z" fill="currentColor"/>
-                        </svg>
+                        <span>Scegli Standard</span>
                     </a>
                 </div>
                 
-                <!-- Pro+ Package (Featured) -->
+                <!-- Plus Package (Featured) -->
                 <div class="pricing-card featured animate-appear delay-200">
                     <div class="pricing-badge">Consigliato</div>
                     <div class="pricing-header">
-                        <h3 class="pricing-title">Pro+</h3>
+                        <h3 class="pricing-title">Plus</h3>
                         <div class="pricing-price">
                             <span class="price-currency">€</span>
                             <span class="price-amount">1.899</span>
@@ -317,7 +318,7 @@
                     </div>
                     
                     <ul class="pricing-features">
-                        <li>Tutto del pacchetto Pro</li>
+                        <li>Tutto del pacchetto Standard</li>
                         <li><strong>SEO avanzato + GEO</strong> (motori AI)</li>
                         <li>Blog integrato con CMS</li>
                         <li><strong>5 revisioni</strong> illimitate</li>
@@ -329,10 +330,7 @@
                     </ul>
                     
                     <a href="#contact" class="pricing-cta">
-                        <span>Scegli Pro+</span>
-                        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 36 15" fill="none">
-                            <path d="M35.7071 8.20711C36.0976 7.81658 36.0976 7.18342 35.7071 6.79289L29.3431 0.428932C28.9526 0.0384078 28.3195 0.0384078 27.9289 0.428932C27.5384 0.819457 27.5384 1.45262 27.9289 1.84315L33.5858 7.5L27.9289 13.1569C27.5384 13.5474 27.5384 14.1805 27.9289 14.5711C28.3195 14.9616 28.9526 14.9616 29.3431 14.5711L35.7071 8.20711ZM0 8.5H35V6.5H0V8.5Z" fill="currentColor"/>
-                        </svg>
+                        <span>Scegli Plus</span>
                     </a>
                 </div>
             </div>
@@ -407,8 +405,8 @@
                                 <label for="pacchetto">Pacchetto di Interesse</label>
                                 <select id="pacchetto" name="pacchetto">
                                     <option value="">Seleziona un pacchetto</option>
-                                    <option value="pro">Pro - €1.299</option>
-                                    <option value="pro-plus">Pro+ - €1.899</option>
+                                    <option value="standard">Standard - €1.299</option>
+                                    <option value="plus">Plus - €1.899</option>
                                     <option value="personalizzato">Soluzione personalizzata</option>
                                 </select>
                             </div>
@@ -431,9 +429,6 @@
                         <div class="form-submit">
                             <button type="submit" class="form-cta">
                                 <span>Invia Richiesta</span>
-                                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 36 15" fill="none">
-                                    <path d="M35.7071 8.20711C36.0976 7.81658 36.0976 7.18342 35.7071 6.79289L29.3431 0.428932C28.9526 0.0384078 28.3195 0.0384078 27.9289 0.428932C27.5384 0.819457 27.5384 1.45262 27.9289 1.84315L33.5858 7.5L27.9289 13.1569C27.5384 13.5474 27.5384 14.1805 27.9289 14.5711C28.3195 14.9616 28.9526 14.9616 29.3431 14.5711L35.7071 8.20711ZM0 8.5H35V6.5H0V8.5Z" fill="currentColor"/>
-                                </svg>
                             </button>
                         </div>
                     </form>
@@ -442,7 +437,13 @@
                 <!-- Contact Info -->
                 <div class="contact-info animate-appear delay-200">
                     <div class="info-card">
-                        <div class="info-icon">📧</div>
+                        <div class="info-icon">
+                          <!-- Mail Icon -->
+                          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <polyline points="3 7 12 13 21 7"/>
+                          </svg>
+                        </div>
                         <div class="info-content">
                             <h4 class="info-title">Email</h4>
                             <p class="info-detail">info@advancedwebsitesWwizards.it</p>
@@ -450,7 +451,12 @@
                     </div>
                     
                     <div class="info-card">
-                        <div class="info-icon">📞</div>
+                        <div class="info-icon">
+                          <!-- Phone Icon -->
+                          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11l-.27.27a16 16 0 0 0 6.29 6.29l.27-.27a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/>
+                          </svg>
+                        </div>
                         <div class="info-content">
                             <h4 class="info-title">Telefono</h4>
                             <p class="info-detail">+39 02 1234 5678</p>
@@ -458,7 +464,13 @@
                     </div>
                     
                     <div class="info-card">
-                        <div class="info-icon">⏰</div>
+                        <div class="info-icon">
+                          <!-- Clock Icon -->
+                          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                          </svg>
+                        </div>
                         <div class="info-content">
                             <h4 class="info-title">Orari</h4>
                             <p class="info-detail">Lun-Ven: 9:00 - 18:00</p>
@@ -466,7 +478,13 @@
                     </div>
                     
                     <div class="info-card">
-                        <div class="info-icon">🎯</div>
+                        <div class="info-icon">
+                          <!-- CheckCircle Icon -->
+                          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="9 12 12 15 17 10"/>
+                          </svg>
+                        </div>
                         <div class="info-content">
                             <h4 class="info-title">Risposta</h4>
                             <p class="info-detail">Preventivo entro 24h</p>
@@ -482,40 +500,37 @@
         <div class="section-container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3 class="footer-title">Advanced Websites Wizards</h3>
+                    <h3 class="footer-title">Advanced Website Wizards</h3>
                     <p class="footer-description">
-                        Soluzioni web professionali per commercialisti e avvocati. 
+                        Soluzioni web professionali per commercialisti e avvocati.<br>
                         Aumenta la tua presenza online e attira nuovi clienti.
                     </p>
                 </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4 class="footer-heading">Servizi</h4>
-                        <ul class="footer-menu">
-                            <li><a href="#features">Sviluppo Siti Web</a></li>
-                            <li><a href="#features">SEO e Marketing</a></li>
-                            <li><a href="#features">Design Responsive</a></li>
-                            <li><a href="#features">Consulenza Digital</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4 class="footer-heading">Informazioni</h4>
-                        <ul class="footer-menu">
-                            <li><a href="#contact">Contatti</a></li>
-                            <li><a href="#privacy">Privacy Policy</a></li>
-                            <li><a href="#terms">Termini di Servizio</a></li>
-                            <li><a href="#faq">FAQ</a></li>
-                        </ul>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Servizi</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#features">Sviluppo Siti Web</a></li>
+                        <li><a href="#features">SEO e Marketing</a></li>
+                        <li><a href="#features">Design Responsive</a></li>
+                        <li><a href="#features">Consulenza Digital</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Informazioni</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#contact">Contatti</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Termini di Servizio</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                    <div class="footer-contacts" style="margin-top:20px;">
+                        <a href="mailto:info@advancedwebsiteswizards.it">info@advancedwebsiteswizards.it</a><br>
+                        <a href="tel:+390212345678">+39 02 1234 5678</a>
                     </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2025 Advanced Websites Wizards. Tutti i diritti riservati.
-                </p>
+                <small>© 2025 Advanced Website Wizards. Tutti i diritti riservati.</small>
             </div>
         </div>
     </footer>
