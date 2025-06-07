@@ -1,0 +1,252 @@
+# Progetto Landing Page "Sistema Web Primi Online"
+
+## Overview
+Sistema Web specializzato per commercialisti e avvocati che vogliono essere trovati facilmente online dai loro potenziali clienti. La landing page è progettata per convertire visitatori in lead qualificati attraverso un design moderno, copy persuasivo e un funnel di conversione ottimizzato. Il target principale sono studi professionali (commercialisti e avvocati) che perdono clienti perché non sono visibili online quando i potenziali clienti li cercano su Google.
+
+L'obiettivo è creare una landing page ad alta conversione che generi richieste di analisi gratuita, utilizzando un design moderno ispirato a lander.studio con glassmorphism, micro-animazioni e un approccio mobile-first.
+
+## Core Features
+
+### 1. Hero Section Above-the-fold
+- **Layout asimmetrico**: Logo minimalista + menu pulito
+- **Headlines impattanti**: "I Tuoi Clienti Ti Cercano Su Google. I Tuoi Concorrenti Li Stanno Trovando."
+- **CTA principale**: "Richiedi Analisi Gratuita" con micro-copy rassicurante
+- **Hero visual**: Immagine/video che rappresenta il successo professionale
+- **Design system**: Palette blu professionale (#1e40af) + grigio neutro + accenti verdi (#10b981)
+
+### 2. Social Proof Ticker Animato
+- **Carousel automatico**: Loghi di città/ordini professionali serviti
+- **Statistiche credibili**: "Oltre 150 studi professionali ci hanno scelto in Lazio, Lombardia, Veneto..."
+- **Animazioni smooth**: Scorrimento infinito fluido
+
+### 3. Problema Section (Agitazione del dolore)
+- **Layout 2 colonne**: Testo + visual statistics
+- **Pain points specifici**: Elenco bullet dei problemi comuni
+- **Statistiche animate**: "73% degli italiani sceglie professionisti trovati online"
+- **Emotional hook**: Quantificazione della perdita (10-15 clienti persi/mese)
+
+### 4. Soluzione Section (Presentazione del sistema)
+- **Demo video/mockup**: Visualizzazione del prodotto in azione
+- **Lista benefici**: 4 punti chiave con checkmarks verdi
+- **CTA secondario**: Per chi vuole saperne di più
+- **Proof elements**: Screenshots di risultati reali
+
+### 5. Come Funziona (3-Step Process)
+- **Timeline orizzontale**: Processo in 3 step visualizzato
+- **Cards espandibili**: Dettagli per ogni fase del processo
+- **Animazioni progressive**: Reveal on scroll degli step
+- **Call-to-action di continuità**: Verso la sezione successiva
+
+### 6. Stack di Valore (Quello che ottieni)
+- **Grid di 6 cards**: Sito Web, SEO Local, Contact Forms, Hosting, Support, Garanzia
+- **Hover effects**: Interazioni micro al passaggio del mouse
+- **Icons moderne**: Set coerente di icone (Heroicons/Lucide)
+- **Value stacking**: Presentazione del valore complessivo
+
+### 7. Pricing Section (Anchor + Offerta)
+- **Comparison table**: Agency tradizionali vs Noi
+- **Price anchoring**: €2000-5000 vs €799
+- **Urgency elements**: Tempi di consegna (4-8 settimane vs 3 giorni)
+- **Main CTA finale**: Button principale per conversione
+
+## User Experience
+
+### User Personas
+**Persona Primaria: Commercialista Moderno**
+- Età: 35-55 anni
+- Problema: Non riceve abbastanza clienti nuovi
+- Obiettivo: Essere trovato facilmente online quando cercano un commercialista
+- Frustrazione: I concorrenti appaiono prima di lui su Google
+
+**Persona Secondaria: Avvocato di Studio Medio**
+- Età: 40-60 anni
+- Problema: Dipende ancora dal passaparola
+- Obiettivo: Modernizzare la presenza online
+- Frustrazione: Non ha tempo per occuparsi di marketing digitale
+
+### Key User Flows
+1. **Flusso di conversione principale**:
+   Landing → Problema (agitazione) → Soluzione → Come funziona → Valore → Prezzo → CTA
+
+2. **Flusso di engagement**:
+   Hero CTA → Form di contatto → Thank you page → Email sequence
+
+3. **Flusso mobile**:
+   Hero mobile → Social proof → Problema compatto → CTA rapido
+
+### UI/UX Considerations
+- **Mobile-first design**: Ottimizzazione prioritaria per dispositivi mobili
+- **Micro-interactions**: Feedback visivi per ogni azione utente
+- **Scroll-triggered animations**: Rivelazione progressiva dei contenuti
+- **Typography hierarchy**: Inter/Poppins per headers, system fonts per body
+- **Accessibility**: Contrasti WCAG compliant, navigazione keyboard-friendly
+
+## Technical Architecture
+
+### System Components
+- **Frontend statico**: HTML5 + CSS3 + Vanilla JavaScript
+- **Animation library**: GSAP o AOS (Animate On Scroll)
+- **Form handling**: HTML forms con validation JS + backend endpoint
+- **Analytics**: Google Analytics 4 + Facebook Pixel
+- **Performance**: Lazy loading, WebP images, critical CSS inline
+
+### Data Models
+```javascript
+// Lead Form Data Structure
+{
+  "lead": {
+    "name": "string",
+    "email": "string", 
+    "phone": "string",
+    "profession": "commercialista|avvocato",
+    "city": "string",
+    "current_website": "boolean",
+    "source": "organic|paid|referral",
+    "timestamp": "datetime"
+  }
+}
+```
+
+### APIs and Integrations
+- **Email service**: Mailchimp/ConvertKit per nurturing
+- **CRM integration**: HubSpot/Pipedrive per lead management
+- **Analytics APIs**: Google Analytics Measurement Protocol
+- **Contact forms**: EmailJS o backend PHP/Node.js semplice
+
+### Infrastructure Requirements
+- **Hosting**: Netlify/Vercel per deployment automatico
+- **CDN**: Cloudflare per performance globale
+- **SSL**: Certificato automatico incluso
+- **Domain**: Domini personalizzati per credibilità
+
+## Development Roadmap
+
+### Fase 1: MVP Foundation (Settimana 1)
+- Setup struttura file HTML/CSS/JS
+- Implementazione Hero Section completa
+- Problema Section con copy persuasivo
+- Form di contatto funzionante
+- Responsive design base (mobile + desktop)
+- Deploy su hosting temporaneo per test
+
+### Fase 2: Core Conversion Elements (Settimana 2)
+- Soluzione Section con demo visiva
+- Come Funziona timeline animata
+- Social Proof ticker implementato
+- Stack di Valore grid cards
+- Pricing comparison table
+- Integrazione analytics base
+
+### Fase 3: Advanced Features & Animations (Settimana 3)
+- Micro-animazioni GSAP/AOS
+- Glassmorphism design refinement
+- Advanced hover effects
+- Scroll-triggered animations
+- Performance optimization (Core Web Vitals)
+- Cross-browser testing
+
+### Fase 4: Optimization & Launch (Settimana 4)
+- A/B testing setup per copy variations
+- SEO on-page completo
+- Schema markup implementation
+- Email automation sequences
+- CRM integration completa
+- Analytics dashboard setup
+- Final deployment su dominio definitivo
+
+## Logical Dependency Chain
+
+### Foundation Dependencies (Blockers iniziali)
+1. **Design System Setup** → Tutti i componenti visuali
+2. **HTML Structure** → CSS styling e JS interactions
+3. **Mobile Layout** → Progressive enhancement per desktop
+4. **Hero Section** → Template per altre sezioni
+
+### Feature Dependencies
+1. **Hero CTA** → Form handling → Email integration
+2. **Problema Section** → Soluzione Section (narrativa coerente)
+3. **Base CSS** → Animazioni avanzate → Performance optimization
+4. **Analytics setup** → A/B testing → Conversion tracking
+
+### Progressive Enhancement Path
+1. **Core HTML/CSS** (funziona senza JS)
+2. **Basic interactions** (form validation, smooth scroll)
+3. **Advanced animations** (GSAP, parallax effects)
+4. **Analytics & tracking** (non-blocking per l'esperienza utente)
+
+## Risks and Mitigations
+
+### Technical Challenges
+**Rischio**: Animazioni troppo pesanti su mobile
+**Mitigazione**: Progressive enhancement, media queries per ridurre animazioni
+
+**Rischio**: Core Web Vitals non ottimali
+**Mitigazione**: Lazy loading, critical CSS, image optimization, performance budget
+
+**Rischio**: Compatibilità browser legacy
+**Mitigazione**: Graceful degradation, polyfills per funzioni critiche
+
+### MVP Strategy
+**Focus primario**: Conversione over visual perfection
+**Priorità**: Form funzionante > Animazioni elaborate
+**Testing approach**: Mobile-first, poi desktop enhancement
+
+### Resource Constraints
+**Budget limitation**: Nessun budget per librerie premium
+**Soluzione**: Vanilla JS + CSS animations + free libraries
+
+**Time constraint**: Launch rapido richiesto
+**Soluzione**: Phased rollout, MVP primo poi enhancement
+
+## Appendix
+
+### Research Findings
+- 73% degli italiani sceglie professionisti trovati online
+- Il 90% delle ricerche per servizi professionali avviene su mobile
+- Landing pages con social proof convertono il 15% in più
+- Testimonial video aumentano la fiducia del 38%
+
+### Technical Specifications
+```html
+<!-- Performance Requirements -->
+- Lighthouse Score: 90+ per tutte le metriche
+- LCP (Largest Contentful Paint): < 2.5s
+- CLS (Cumulative Layout Shift): < 0.1
+- FID (First Input Delay): < 100ms
+
+<!-- SEO Requirements -->
+- Meta tags ottimizzati per ricerche locali
+- Schema markup per servizi professionali
+- Open Graph per social sharing
+- Sitemap XML generata
+```
+
+### File Structure Reference
+```
+landing-page/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   ├── main.css (core styles)
+│   │   ├── animations.css (GSAP/CSS animations)
+│   │   └── responsive.css (media queries)
+│   ├── js/
+│   │   ├── main.js (core functionality)
+│   │   ├── animations.js (GSAP animations)
+│   │   └── forms.js (form handling)
+│   ├── images/
+│   │   ├── hero/ (hero visuals)
+│   │   ├── icons/ (SVG icons)
+│   │   └── testimonials/ (client photos)
+│   └── fonts/ (local font files)
+├── components/ (HTML partials per development)
+│   ├── hero.html
+│   ├── problema.html
+│   ├── soluzione.html
+│   ├── come-funziona.html
+│   ├── valore.html
+│   └── pricing.html
+└── docs/
+    ├── copy.md (tutti i testi)
+    └── design-specs.md (specifiche visual)
+``` 

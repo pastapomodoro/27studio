@@ -1,0 +1,11 @@
+<svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="20" cy="20" r="18" fill="#000000"/>
+  
+  <!-- Letter S in the circle -->
+  <path d="M16 12C18.5 12 20 13.5 20 15.5C20 16.5 19.5 17.3 18.8 17.8C19.8 18.3 20.5 19.3 20.5 20.5C20.5 22.8 18.5 24.5 16 24.5C13.5 24.5 11.5 22.8 11.5 20.5H13.5C13.5 21.6 14.4 22.5 16 22.5C17.6 22.5 18.5 21.6 18.5 20.5C18.5 19.4 17.6 18.5 16 18.5H15V16.5H16C17.1 16.5 18 15.9 18 15.5C18 14.6 17.4 14 16 14C14.6 14 14 14.6 14 15.5H12C12 13.5 13.5 12 16 12Z" fill="#ffffff"/>
+  
+  <!-- Text -->
+  <text x="50" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#000000">SISTEMA WEB</text>
+  <text x="50" y="30" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="400" fill="#666666">PRIMI ONLINE</text>
+</svg> 
