@@ -313,6 +313,8 @@ class NewStyleSite {
 
         // Handle form submission with FormSubmit
         form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Always prevent default submission to handle it with JS
+
             // Validate all fields before allowing submission
             let isFormValid = true;
             formFields.forEach(field => {
@@ -323,7 +325,6 @@ class NewStyleSite {
             });
 
             if (!isFormValid) {
-                e.preventDefault(); // Prevent submission if invalid
                 // Focus first invalid field
                 const firstInvalid = form.querySelector('input:invalid, select:invalid, textarea:invalid');
                 if (firstInvalid) {
@@ -332,33 +333,71 @@ class NewStyleSite {
                 return;
             }
 
-            // Show loading state before FormSubmit takes over
+            // Show loading state
             const submitButton = form.querySelector('.form-cta');
             const originalText = submitButton.querySelector('span').textContent;
             
             submitButton.querySelector('span').textContent = 'Invio in corso...';
+            submitButton.disabled = true; // Disable button
             submitButton.style.pointerEvents = 'none';
             submitButton.style.opacity = '0.8';
 
-            // Store form data for thanks page
+            // Prepare form data for both sessionStorage and submission
             const formData = new FormData(form);
             const formObj = {};
             for (let [key, value] of formData.entries()) {
-                if (!key.startsWith('_') && key !== 'privacy') { // Skip FormSubmit fields and privacy
+                if (!key.startsWith('_') && key !== 'privacy') {
                     formObj[key] = value;
                 }
             }
-            sessionStorage.setItem('formData', JSON.stringify(formObj));
             
-            // After FormSubmit processes (approx 2-3 seconds), redirect to thanks page
-            setTimeout(() => {
-                try {
-                    window.location.href = 'thanks.html';
-                } catch (error) {
-                    // Fallback: show success message in current page
-                    this.showInlineSuccessMessage(form);
+            try {
+                sessionStorage.setItem('formData', JSON.stringify(formObj));
+            } catch (error) {
+                console.error('Could not save form data to sessionStorage:', error);
+            }
+            
+            // Submit the form using fetch
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
                 }
-            }, 3000);
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect on success
+                    const redirectUrl = form.querySelector('[name="_next"]')?.value || 'thanks.html';
+                    window.location.href = redirectUrl;
+                } else {
+                    // Handle server errors (e.g., from FormSubmit)
+                    response.json().then(data => {
+                        if (data.hasOwnProperty('errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Si è verificato un errore. Riprova più tardi.');
+                        }
+                    }).catch(() => {
+                        alert('Si è verificato un errore sconosciuto. Riprova più tardi.');
+                    });
+                    // Restore button state
+                    submitButton.querySelector('span').textContent = originalText;
+                    submitButton.disabled = false;
+                    submitButton.style.pointerEvents = 'auto';
+                    submitButton.style.opacity = '1';
+                }
+            })
+            .catch(error => {
+                // Handle network errors
+                console.error('Errore:', error);
+                alert('Si è verificato un errore di rete. Controlla la tua connessione e riprova.');
+                // Restore button state
+                submitButton.querySelector('span').textContent = originalText;
+                submitButton.disabled = false;
+                submitButton.style.pointerEvents = 'auto';
+                submitButton.style.opacity = '1';
+            });
         });
     }
 
