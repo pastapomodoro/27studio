@@ -297,13 +297,23 @@ class NewStyleSite {
                     validateField(field);
                 }
             });
+            
+            // Special handling for phone number field - allow only numbers and specific characters
+            if (field.id === 'telefono') {
+                field.addEventListener('input', (e) => {
+                    // Allow only numbers, spaces, +, -, (, )
+                    const value = e.target.value;
+                    const sanitized = value.replace(/[^0-9\s\+\-\(\)]/g, '');
+                    if (value !== sanitized) {
+                        e.target.value = sanitized;
+                    }
+                });
+            }
         });
 
-        // Handle form submission
+        // Handle form submission with FormSubmit
         form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Validate all fields
+            // Validate all fields before allowing submission
             let isFormValid = true;
             formFields.forEach(field => {
                 validateField(field);
@@ -312,109 +322,79 @@ class NewStyleSite {
                 }
             });
 
-            if (isFormValid) {
-                this.submitForm(form);
-            } else {
+            if (!isFormValid) {
+                e.preventDefault(); // Prevent submission if invalid
                 // Focus first invalid field
                 const firstInvalid = form.querySelector('input:invalid, select:invalid, textarea:invalid');
                 if (firstInvalid) {
                     firstInvalid.focus();
                 }
+                return;
             }
+
+            // Show loading state before FormSubmit takes over
+            const submitButton = form.querySelector('.form-cta');
+            const originalText = submitButton.querySelector('span').textContent;
+            
+            submitButton.querySelector('span').textContent = 'Invio in corso...';
+            submitButton.style.pointerEvents = 'none';
+            submitButton.style.opacity = '0.8';
+
+            // Store form data for thanks page
+            const formData = new FormData(form);
+            const formObj = {};
+            for (let [key, value] of formData.entries()) {
+                if (!key.startsWith('_') && key !== 'privacy') { // Skip FormSubmit fields and privacy
+                    formObj[key] = value;
+                }
+            }
+            sessionStorage.setItem('formData', JSON.stringify(formObj));
+            
+            // After FormSubmit processes (approx 2-3 seconds), redirect to thanks page
+            setTimeout(() => {
+                try {
+                    window.location.href = 'thanks.html';
+                } catch (error) {
+                    // Fallback: show success message in current page
+                    this.showInlineSuccessMessage(form);
+                }
+            }, 3000);
         });
     }
 
     /**
-     * Handle form submission with loading state
+     * Show success message inline as fallback
      */
-    submitForm(form) {
-        const submitButton = form.querySelector('.form-cta');
-        const originalText = submitButton.querySelector('.cta-text').textContent;
-        
-        // Show loading state
-        submitButton.querySelector('.cta-text').textContent = 'Invio in corso...';
-        submitButton.style.pointerEvents = 'none';
-        submitButton.style.opacity = '0.8';
-
-        // Add spinner animation to arrow
-        const arrow = submitButton.querySelector('.cta-arrow svg');
-        if (arrow) {
-            arrow.style.animation = 'spin 1s linear infinite';
-        }
-
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            // Success state
-            submitButton.querySelector('.cta-text').textContent = '✓ Inviato con successo!';
-            submitButton.style.backgroundColor = '#00c851';
-            
-            // Show success message
-            this.showSuccessMessage();
-            
-            // Reset form after delay
-            setTimeout(() => {
-                form.reset();
-                submitButton.querySelector('.cta-text').textContent = originalText;
-                submitButton.style.pointerEvents = '';
-                submitButton.style.opacity = '';
-                submitButton.style.backgroundColor = '';
-                if (arrow) {
-                    arrow.style.animation = '';
-                }
-            }, 3000);
-        }, 2000);
-    }
-
-    /**
-     * Show success message
-     */
-    showSuccessMessage() {
-        const message = document.createElement('div');
-        message.className = 'success-message';
-        message.innerHTML = `
-            <div style="
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: #00c851;
+    showInlineSuccessMessage(form) {
+        const formContainer = form.closest('.contact-form-wrapper');
+        const successHtml = `
+            <div class="success-message-container" style="
+                text-align: center;
+                padding: 3rem 2rem;
+                background: linear-gradient(135deg, #00c851 0%, #00a843 100%);
+                border-radius: 16px;
                 color: white;
-                padding: 16px 24px;
-                border-radius: 12px;
-                box-shadow: 0 8px 30px rgba(0, 200, 81, 0.3);
-                z-index: 10000;
-                font-family: 'Instrument Sans', sans-serif;
-                font-weight: 500;
-                animation: slideInRight 0.5s ease forwards;
+                animation: slideIn 0.5s ease forwards;
             ">
-                🎉 Richiesta inviata con successo! Ti contatteremo entro 24h.
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🎉</div>
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Messaggio Inviato con Successo!</h3>
+                <p style="margin-bottom: 2rem; opacity: 0.9;">Ti risponderemo entro 24 ore con una proposta personalizzata.</p>
+                <button onclick="window.location.reload()" style="
+                    background: rgba(255,255,255,0.2);
+                    border: 2px solid white;
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+                    Invia Nuovo Messaggio
+                </button>
             </div>
         `;
-
-        // Add animation
-        const keyframes = `
-            @keyframes slideInRight {
-                from {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-        `;
         
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = keyframes;
-        document.head.appendChild(styleSheet);
-
-        document.body.appendChild(message);
-
-        // Remove message after 5 seconds
-        setTimeout(() => {
-            message.remove();
-            styleSheet.remove();
-        }, 5000);
+        formContainer.innerHTML = successHtml;
     }
 
     /**
