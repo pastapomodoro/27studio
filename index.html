@@ -405,6 +405,8 @@
                     
                     <form class="contact-form" id="contactForm" action="https://formsubmit.co/AretexStudio@gmail.com" method="POST">
                         <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_next" value="https://fntanyl.github.io/websitewizards/thanks.html">
+                        <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="🎯 Nuova Richiesta Preventivo - AretexStudio">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_autoresponse" value="Grazie per averci contattato! Abbiamo ricevuto la tua richiesta e ti risponderemo entro 24 ore con una proposta personalizzata per il tuo studio professionale. 
@@ -669,9 +671,6 @@ Questo è un messaggio automatico. Per qualsiasi urgenza, contattaci direttament
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                     <div class="footer-contacts" style="margin-top:20px;">
-                                                    <a href="mailto:AretexStudio@gmail.com">AretexStudio@gmail.com</a><br>
-                        <a href="tel:+390212345678">+39 02 1234 5678</a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -682,5 +681,31 @@ Questo è un messaggio automatico. Per qualsiasi urgenza, contattaci direttament
 
     <!-- Scripts -->
     <script src="assets/js/new-style.js"></script>
+    
+    <!-- Form handling script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // Save form data to sessionStorage for thanks page personalization
+                    const formData = new FormData(form);
+                    const data = {
+                        nomeCompleto: formData.get('nomeCompleto'),
+                        email: formData.get('email'),
+                        professione: formData.get('professione'),
+                        pacchetto: formData.get('pacchetto')
+                    };
+                    
+                    try {
+                        sessionStorage.setItem('formData', JSON.stringify(data));
+                    } catch (error) {
+                        console.log('Could not save form data to sessionStorage');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html> 
