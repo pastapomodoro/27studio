@@ -19,6 +19,7 @@ class NewStyleSite {
         this.handleResponsiveFeatures();
         this.addKeyboardNavigation();
         this.addReducedMotionSupport();
+        this.setupShowcaseCarousel();
     }
 
     /**
@@ -630,6 +631,69 @@ class NewStyleSite {
                 setTimeout(() => inThrottle = false, limit);
             }
         };
+    }
+
+    /**
+     * Setup showcase carousel functionality
+     */
+    setupShowcaseCarousel() {
+        const carousel = document.querySelector('.showcase-carousel');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+
+        if (!carousel || !dotsContainer || dots.length === 0) return;
+
+        let currentSlide = 0;
+        let autoScrollInterval;
+
+        const scrollToSlide = (index) => {
+            carousel.scrollLeft = carousel.offsetWidth * index;
+        };
+
+        const updateDots = () => {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        };
+
+        const handleScroll = () => {
+            const scrollLeft = carousel.scrollLeft;
+            const slideWidth = carousel.offsetWidth;
+            currentSlide = Math.round(scrollLeft / slideWidth);
+            updateDots();
+        };
+
+        const startAutoScroll = () => {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                scrollToSlide(currentSlide);
+            }, 5000); // Change slide every 5 seconds
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(autoScrollInterval);
+        };
+
+        // Event Listeners
+        dotsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('dot')) {
+                const slideIndex = parseInt(e.target.dataset.slide);
+                currentSlide = slideIndex;
+                scrollToSlide(currentSlide);
+                stopAutoScroll();
+                startAutoScroll();
+            }
+        });
+
+        carousel.addEventListener('scroll', this.throttle(handleScroll, 100));
+
+        carousel.addEventListener('mouseover', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        // Initial setup
+        updateDots();
+        startAutoScroll();
     }
 }
 

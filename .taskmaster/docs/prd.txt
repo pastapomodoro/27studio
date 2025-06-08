@@ -249,4 +249,8 @@ landing-page/
 └── docs/
     ├── copy.md (tutti i testi)
     └── design-specs.md (specifiche visual)
-``` 
+```
+
+### Pricing Details
+- **Standard**: Piano base
+- **Plus**: Piano avanzato 
