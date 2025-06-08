@@ -1,6 +1,4 @@
-/* New Style CSS - Consistent with Hero Component */
 
-/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -1106,11 +1104,10 @@ body {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 580px;
 }
 
 .pricing-card.featured {
-    border-color: #000000;
     transform: scale(1.05);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
@@ -1183,7 +1180,7 @@ body {
     list-style: none;
     margin-bottom: 40px;
     text-align: left;
-    flex: 1 1 auto;
+    flex-grow: 1;
 }
 
 .pricing-features li {
@@ -1340,6 +1337,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+
+.form-row-full {
+    grid-template-columns: 1fr;
 }
 
 .form-group {
@@ -1520,6 +1521,123 @@ body {
     font-size: 14px;
     color: #666666;
 }
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background: #f3f1ea;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(243, 241, 234, 0.3);
+}
+
+.faq-question span {
+    flex: 1;
+    margin-right: 20px;
+    line-height: 1.4;
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f3f1ea;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover .faq-icon {
+    background: #e0dcd1;
+    transform: scale(1.05);
+}
+
+.faq-icon svg {
+    transition: transform 0.3s ease;
+    color: #666666;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon svg {
+    transform: rotate(45deg);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon svg line:first-child {
+    opacity: 0;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 300px;
+}
+
+.faq-content {
+    padding: 0 32px 32px 32px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.faq-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666666;
+    margin: 20px 0 0 0;
+}
+
+/* FAQ Animation */
+.faq-item.animate-appear {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: appear 0.6s ease forwards;
+}
+
+.delay-600 { animation-delay: 0.6s; }
 
 /* Footer */
 .footer-section {
@@ -1788,6 +1906,40 @@ body {
     
     .footer-brand {
         max-width: none;
+    }
+    
+    /* FAQ Mobile Styles */
+    .faq-section {
+        padding: 60px 0;
+    }
+    
+    .faq-container {
+        margin-top: 40px;
+        padding: 0 16px;
+        gap: 12px;
+    }
+    
+    .faq-question {
+        font-size: 16px;
+        padding: 20px 24px;
+    }
+    
+    .faq-question span {
+        margin-right: 16px;
+    }
+    
+    .faq-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .faq-content {
+        padding: 0 24px 24px 24px;
+    }
+    
+    .faq-content p {
+        font-size: 15px;
+        margin: 16px 0 0 0;
     }
 }
 
