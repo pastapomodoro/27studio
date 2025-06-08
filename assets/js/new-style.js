@@ -16,6 +16,7 @@ class NewStyleSite {
         this.setupFormValidation();
         this.setupSmoothScrolling();
         this.setupButtonInteractions();
+        this.setupFAQ();
         this.handleResponsiveFeatures();
         this.addKeyboardNavigation();
         this.addReducedMotionSupport();
@@ -505,6 +506,56 @@ class NewStyleSite {
         const styleSheet = document.createElement('style');
         styleSheet.textContent = rippleStyles;
         document.head.appendChild(styleSheet);
+    }
+
+    /**
+     * Setup FAQ accordion functionality
+     */
+    setupFAQ() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon svg');
+            
+            if (!question || !answer) return;
+            
+            // Handle click events
+            question.addEventListener('click', () => {
+                const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        
+                        if (otherQuestion && otherAnswer) {
+                            otherQuestion.setAttribute('aria-expanded', 'false');
+                            otherAnswer.classList.remove('active');
+                        }
+                    }
+                });
+                
+                // Toggle current item
+                if (isExpanded) {
+                    question.setAttribute('aria-expanded', 'false');
+                    answer.classList.remove('active');
+                } else {
+                    question.setAttribute('aria-expanded', 'true');
+                    answer.classList.add('active');
+                }
+            });
+            
+            // Handle keyboard navigation
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+        });
     }
 
     /**
