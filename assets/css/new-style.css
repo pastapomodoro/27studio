@@ -127,16 +127,18 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 .mobile-menu-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .mobile-menu {
@@ -625,6 +627,9 @@ body {
     color: #666666;
     max-width: 600px;
     margin: 0 auto;
+    orphans: 2;
+    widows: 2;
+    text-wrap: balance;
 }
 
 /* Features Section */
@@ -1789,11 +1794,13 @@ body {
     }
     
     .title-mobile-break::after {
-        content: ' al';
+        content: '\A';
+        white-space: pre;
     }
     
-    .title-mobile-al {
-        display: none;
+    .title-mobile-break-second::before {
+        content: '\A';
+        white-space: pre;
     }
     
     .hero-subtitle {

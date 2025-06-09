@@ -9,14 +9,17 @@
     
     <title>Siti Web per Commercialisti e Avvocati | AretexStudio</title>
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     
     <!-- Fonts - Enhanced with Instrument Sans and Serif -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet"></noscript>
     
     <!-- Stylesheets -->
+    <link rel="preload" href="assets/css/new-style.css" as="style">
+    <link rel="preload" href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=656&fit=crop&crop=center&auto=format&q=80" as="image">
     <link rel="stylesheet" href="assets/css/new-style.css">
     
     <!-- Favicon -->
@@ -41,10 +44,10 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
                 <div class="nav-container" style="display: flex; align-items: center;">
-            <div class="nav-brand" style="display: flex; align-items: center; height: 100%; gap: 4px;">
+            <a href="#" class="nav-brand" style="display: flex; align-items: center; height: 100%; gap: 4px; text-decoration: none; color: inherit;">
                 <img src="assets/images/logos/Logo.png" alt="AretexStudio Logo" class="logo-img" style="height:32px;width:auto;display:block;margin:0;" />
                 <span class="logo-text" style="display: inline-flex; align-items: center; line-height: 32px; font-size: 1.75rem; height: 32px;">Aretex <span class="logo-text-italic" style="font-style: italic;">Studio</span></span>
-            </div>
+            </a>
             
             <!-- Desktop Menu -->
             <div class="nav-menu">
@@ -89,24 +92,24 @@
     <section class="hero-component">
         <!-- Eyebrow Text -->
         <p class="hero-eyebrow animate-appear">
-            I MAGHI DEI SITI WEB
+            SOLUZIONI WEB PROFESSIONALI
         </p>
 
         <!-- Main Title -->
         <h1 class="hero-title animate-appear delay-100">
             <div class="title-line">
                 <span class="title-serif">Il tuo studio, </span>
-                <span class="title-italic">perfettamente </span>
-                <span class="title-serif title-mobile-break">connesso</span>
+                <span class="title-italic title-mobile-break">perfettamente</span>
             </div>
             <div class="title-line">
-                <span class="title-serif title-mobile-al">al </span><span class="title-serif">mondo digitale</span>
+                <span class="title-serif">connesso al</span>
+                <span class="title-serif title-mobile-break-second"> mondo digitale.</span>
             </div>
         </h1>
 
         <!-- Subtitle -->
         <p class="hero-subtitle animate-appear delay-300">
-            Soluzioni web professionali che uniscono design moderno, SEO avanzato e funzionalità su misura per commercialisti e avvocati
+            Soluzioni web professionali che uniscono design moderno, SEO avanzato e funzionalità su misura per commercialisti e avvocati.
         </p>
 
         <!-- CTA Button -->
@@ -119,11 +122,13 @@
             <div class="mockup-frame">
                 <div class="mockup-container">
                     <img 
-                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1274&h=1043&fit=crop&crop=center&auto=format&q=80"
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=656&fit=crop&crop=center&auto=format&q=80"
                         alt="Dashboard AretexStudio"
                         class="mockup-image"
-                        width="1274"
-                        height="1043"
+                        width="800"
+                        height="656"
+                        loading="eager"
+                        fetchpriority="high"
                     />
                 </div>
             </div>
@@ -223,7 +228,7 @@
                     <div class="timeline-content">
                         <h3 class="timeline-title">Consulenza Iniziale</h3>
                         <p class="timeline-description">Analizziamo le tue esigenze e pianifichiamo la strategia migliore per il tuo studio</p>
-                        <div class="timeline-duration">1-2 giorni</div>
+                        <div class="timeline-duration">1 giorno</div>
                     </div>
                 </div>
                 
@@ -239,7 +244,7 @@
                     <div class="timeline-content">
                         <h3 class="timeline-title">Sviluppo</h3>
                         <p class="timeline-description">Creiamo il tuo sito web con design professionale e contenuti ottimizzati</p>
-                        <div class="timeline-duration">7-14 giorni</div>
+                        <div class="timeline-duration">3-5 giorni</div>
                     </div>
                 </div>
                 
@@ -280,7 +285,7 @@
         <!-- Showcase Card (singola, stile affiancato) -->
         <div class="showcase-card showcase-card-suprema animate-appear delay-100">
           <div class="showcase-images-suprema">
-            <img src="https://picsum.photos/340/440" alt="Suprema Desktop Preview" class="showcase-img-suprema desktop" />
+            <img src="https://picsum.photos/seed/aretexstudio/340/440" alt="Suprema Desktop Preview" class="showcase-img-suprema desktop" width="340" height="440" loading="lazy" />
           </div>
           <div class="showcase-info-suprema">
             <h3 class="showcase-title-suprema title-serif">Suprema</h3>
@@ -336,7 +341,7 @@
                         <li>Setup completo</li>
                     </ul>
                     
-                    <a href="#contact" class="pricing-cta">
+                    <a href="#contact" class="pricing-cta" onclick="selectPackage('pro')">
                         <span>Scegli Pro</span>
                     </a>
                 </div>
@@ -366,7 +371,7 @@
                         <li>Setup completo</li>
                     </ul>
                     
-                    <a href="#contact" class="pricing-cta">
+                    <a href="#contact" class="pricing-cta" onclick="selectPackage('pro-multipage')">
                         <span>Scegli Pro Multipage</span>
                     </a>
                 </div>
@@ -381,8 +386,8 @@
             <div class="section-header animate-appear">
                 <p class="section-eyebrow">INIZIAMO INSIEME</p>
                 <h2 class="section-title">
-                    <span class="title-serif">Richiedi il tuo </span>
-                    <span class="title-italic">preventivo</span>
+                    <span class="title-serif">Crea il tuo </span>
+                    <span class="title-italic">sito</span>
                 </h2>
                 <p class="section-subtitle">
                     Compila il form per ricevere una proposta personalizzata entro 24h
@@ -639,7 +644,10 @@
         <div class="section-container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3 class="footer-title">AretexStudio</h3>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px;">
+                        <img src="assets/images/logos/Logo.png" alt="AretexStudio Logo" style="height:32px;width:auto;filter:brightness(0) invert(1);" />
+                        <h3 class="footer-title" style="margin-bottom: 0;">AretexStudio</h3>
+                    </div>
                     <p class="footer-description">
                         Soluzioni web professionali per commercialisti e avvocati.<br>
                         Aumenta la tua presenza online e attira nuovi clienti.
@@ -672,12 +680,29 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/js/new-style.js"></script>
+    <script src="assets/js/new-style.js" defer></script>
     
     <!-- Form handling script -->
     <script>
+        // Function to select package when clicking pricing buttons
+        function selectPackage(packageValue) {
+            setTimeout(function() {
+                const packageSelect = document.getElementById('pacchetto');
+                if (packageSelect) {
+                    packageSelect.value = packageValue;
+                }
+            }, 100);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contactForm');
+            
+            // Fix showcase image to avoid random changes on refresh
+            const showcaseImg = document.querySelector('.showcase-img-suprema');
+            if (showcaseImg && showcaseImg.src.includes('picsum.photos')) {
+                // Use a fixed seed for consistent image
+                showcaseImg.src = 'https://picsum.photos/seed/aretexstudio/340/440';
+            }
             
             if (form) {
                 form.addEventListener('submit', function(e) {
