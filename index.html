@@ -70,7 +70,10 @@
         <div class="mobile-menu-overlay" id="mobileMenuOverlay">
             <div class="mobile-menu">
                 <div class="mobile-menu-header">
-                    <span class="mobile-logo-text">AretexStudio</span>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <img src="assets/images/logos/Logo.png" alt="AretexStudio Logo" style="height:24px;width:auto;" />
+                        <span class="mobile-logo-text">AretexStudio</span>
+                    </div>
                     <button class="close-btn" id="closeBtn" aria-label="Chiudi menu">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -341,7 +344,7 @@
                         <li>Setup completo</li>
                     </ul>
                     
-                    <a href="#contact" class="pricing-cta" onclick="selectPackage('pro')">
+                    <a href="#" class="pricing-cta" onclick="selectPackageAndScroll('pro'); return false;">
                         <span>Scegli Pro</span>
                     </a>
                 </div>
@@ -371,7 +374,7 @@
                         <li>Setup completo</li>
                     </ul>
                     
-                    <a href="#contact" class="pricing-cta" onclick="selectPackage('pro-multipage')">
+                    <a href="#" class="pricing-cta" onclick="selectPackageAndScroll('pro-multipage'); return false;">
                         <span>Scegli Pro Multipage</span>
                     </a>
                 </div>
@@ -447,7 +450,7 @@
                                     <option value="altro">Altro</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" id="pacchetto-group">
                                 <label for="pacchetto">Pacchetto di Interesse</label>
                                 <select id="pacchetto" name="pacchetto">
                                     <option value="">Seleziona un pacchetto</option>
@@ -684,14 +687,24 @@
     
     <!-- Form handling script -->
     <script>
-        // Function to select package when clicking pricing buttons
-        function selectPackage(packageValue) {
-            setTimeout(function() {
-                const packageSelect = document.getElementById('pacchetto');
-                if (packageSelect) {
-                    packageSelect.value = packageValue;
-                }
-            }, 100);
+        // Function to select package and scroll smoothly to the field
+        function selectPackageAndScroll(packageValue) {
+            // Select the package first
+            const packageSelect = document.getElementById('pacchetto');
+            if (packageSelect) {
+                packageSelect.value = packageValue;
+            }
+            
+            // Then scroll to it smoothly
+            const packageGroup = document.getElementById('pacchetto-group');
+            if (packageGroup) {
+                setTimeout(() => {
+                    packageGroup.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }, 100);
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function() {

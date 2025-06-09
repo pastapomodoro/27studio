@@ -51,8 +51,14 @@ class NewStyleSite {
         // Observe all elements with animate-appear class
         const animateElements = document.querySelectorAll('.animate-appear');
         animateElements.forEach(element => {
-            element.style.animationPlayState = 'paused';
-            observer.observe(element);
+            // If the element is inside the hero component, run the animation.
+            // Otherwise, observe it.
+            if (element.closest('.hero-component')) {
+                element.style.animationPlayState = 'running';
+            } else {
+                element.style.animationPlayState = 'paused';
+                observer.observe(element);
+            }
         });
     }
 
@@ -127,7 +133,7 @@ class NewStyleSite {
             mobileMenuOverlay.classList.remove('active');
             hamburgerBtn.classList.remove('active');
             document.body.style.overflow = '';
-            hamburgerBtn.focus();
+            hamburgerBtn.blur();
         };
 
         // Event listeners

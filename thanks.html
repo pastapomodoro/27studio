@@ -101,25 +101,65 @@
                 <span>Torna alla Home</span>
             </a>
         </div>
+    </section>
 
-        <!-- Additional Info -->
-        <div class="thanks-info animate-appear delay-600" style="margin-top: 4rem; text-align: center; max-width: 600px;">
-            <h3 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.25rem;">Cosa succede ora?</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold;">1</div>
-                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Analisi delle tue esigenze</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Studiamo il tuo profilo e le tue richieste specifiche</p>
+    <!-- What Happens Next Section -->
+    <section class="process-section" style="margin-top: 4rem;">
+        <div class="section-container">
+            <!-- Section Header -->
+            <div class="section-header animate-appear delay-600">
+                <p class="section-eyebrow">IL PROSSIMO PASSO</p>
+                <h2 class="section-title">
+                    <span class="title-serif">Cosa </span>
+                    <span class="title-italic">succede</span>
+                    <span class="title-serif"> ora?</span>
+                </h2>
+                <p class="section-subtitle">
+                    Ecco i passaggi che seguiremo per realizzare il tuo progetto
+                </p>
+            </div>
+            
+            <!-- Process Timeline -->
+            <div class="process-timeline">
+                <div class="timeline-item animate-appear delay-700">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Analisi delle tue esigenze</h3>
+                        <p class="timeline-description">Studiamo il tuo profilo e le tue richieste specifiche per comprendere al meglio le necessità del tuo studio</p>
+                        <div class="timeline-duration">entro 2 ore</div>
+                    </div>
                 </div>
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold;">2</div>
-                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Proposta personalizzata</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Ti invieremo una soluzione su misura per il tuo studio</p>
+                
+                <!-- Arrow between items -->
+                <div class="timeline-arrow animate-appear delay-750">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16L8 12H16L12 16Z" fill="#666666"/>
+                    </svg>
                 </div>
-                <div style="text-align: center;">
-                    <div style="width: 50px; height: 50px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold;">3</div>
-                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Chiamata di consulenza</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Discuteremo insieme i dettagli del progetto</p>
+                
+                <div class="timeline-item animate-appear delay-800">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Proposta personalizzata</h3>
+                        <p class="timeline-description">Ti invieremo una soluzione su misura per il tuo studio con dettagli tecnici e costi</p>
+                        <div class="timeline-duration">entro 24 ore</div>
+                    </div>
+                </div>
+                
+                <!-- Arrow between items -->
+                <div class="timeline-arrow animate-appear delay-850">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16L8 12H16L12 16Z" fill="#666666"/>
+                    </svg>
+                </div>
+                
+                <div class="timeline-item animate-appear delay-900">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Chiamata di consulenza</h3>
+                        <p class="timeline-description">Discuteremo insieme i dettagli del progetto e risponderemo a tutte le tue domande</p>
+                        <div class="timeline-duration">30-45 minuti</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,7 +170,10 @@
         <div class="section-container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3 class="footer-title">AretexStudio</h3>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px;">
+                        <img src="assets/images/logos/Logo.png" alt="AretexStudio Logo" style="height:32px;width:auto;filter:brightness(0) invert(1);" />
+                        <h3 class="footer-title" style="margin-bottom: 0;">AretexStudio</h3>
+                    </div>
                     <p class="footer-description">
                         Soluzioni web professionali per commercialisti e avvocati.<br>
                         Aumenta la tua presenza online e attira nuovi clienti.

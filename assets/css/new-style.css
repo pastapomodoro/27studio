@@ -100,6 +100,12 @@ body {
     gap: 4px;
 }
 
+.hamburger-btn:focus,
+.hamburger-btn:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
 .hamburger-line {
     width: 24px;
     height: 2px;
