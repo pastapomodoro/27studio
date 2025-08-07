@@ -545,7 +545,7 @@ body::before {
     inset: 0;
     border-radius: inherit;
     padding: 2px;
-    background: linear-gradient(135deg, #333333 0%, #666666 50%, #333333 100%);
+    background: var(--gradient-neon);
     background-size: 200% 200%;
     background-position: 0% 50%;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -606,7 +606,7 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     border: 2px solid #ffffff;
     text-decoration: none;
-    background: linear-gradient(135deg, #ffffff 0%, #333333 100%);
+    background: var(--gradient-neon);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
@@ -724,7 +724,7 @@ body::before {
     text-align: center;
     margin: 0 auto 48px;
     max-width: 800px;
-    color: #cccccc;
+    color: var(--text-secondary);
 }
 
 .hero-mockup {
@@ -833,7 +833,7 @@ body::before {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: #666666;
+    color: var(--text-secondary);
     margin-bottom: 16px;
 }
 
@@ -851,7 +851,7 @@ body::before {
     font-size: 20px;
     font-weight: 300;
     line-height: 1.4;
-    color: #666666;
+    color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
     orphans: 2;
@@ -976,7 +976,7 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #666666;
+    color: var(--text-secondary);
     margin-bottom: 24px;
 }
 
@@ -996,19 +996,19 @@ body::before {
 
 .stat-label {
     font-size: 14px;
-    color: #999999;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     transition: all 0.3s ease;
 }
 
 .feature-card:hover .stat-number {
-    color: #333333;
+    color: var(--text-primary);
     transform: scale(1.05);
 }
 
 .feature-card:hover .stat-label {
-    color: #666666;
+    color: var(--text-secondary);
 }
 
 /* Process Section */
@@ -1030,7 +1030,7 @@ body::before {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #ffffff 0%, #666666 100%);
+    background: var(--gradient-neon);
     transform: translateX(-50%);
 }
 
@@ -1101,14 +1101,14 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #666666;
+    color: var(--text-secondary);
     margin-bottom: 16px;
 }
 
 .timeline-duration {
     display: inline-block;
     background-color: #f0f0f0;
-    color: #333333;
+    color: var(--text-primary);
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 14px;
@@ -1183,7 +1183,7 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #666666;
+    color: var(--text-secondary);
     margin-bottom: 24px;
 }
 
@@ -1209,7 +1209,7 @@ body::before {
 
 .stat-label {
     font-size: 14px;
-    color: #666666;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -1453,7 +1453,7 @@ body::before {
 .price-currency {
     font-size: 24px;
     font-weight: 500;
-    color: #666666;
+    color: var(--text-secondary);
 }
 
 .price-amount {
@@ -1464,13 +1464,13 @@ body::before {
 
 .price-period {
     font-size: 16px;
-    color: #666666;
+    color: var(--text-secondary);
 }
 
 .pricing-description {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 16px;
-    color: #666666;
+    color: var(--text-secondary);
 }
 
 .pricing-features {
@@ -1484,7 +1484,7 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #333333;
+    color: var(--text-primary);
     padding: 8px 0;
     position: relative;
     padding-left: 24px;
@@ -1516,7 +1516,7 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     border: 2px solid transparent;
     text-decoration: none;
-    background: linear-gradient(135deg, #1a1a1a 0%, #ffffff 50%, #1a1a1a 100%);
+    background: var(--gradient-neon);
     background-size: 200% 200%;
     background-position: 0% 50%;
     transition: all 0.6s ease;
@@ -1535,7 +1535,7 @@ body::before {
     inset: 0;
     border-radius: inherit;
     padding: 2px;
-    background: linear-gradient(135deg, #333333 0%, #666666 50%, #333333 100%);
+    background: var(--gradient-neon);
     background-size: 200% 200%;
     background-position: 0% 50%;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -1615,7 +1615,7 @@ body::before {
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    color: #666666;
+    color: var(--text-secondary);
 }
 
 #progressPercent {
@@ -1649,7 +1649,7 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #333333;
+    color: var(--text-primary);
     margin-bottom: 8px;
 }
 
@@ -1681,7 +1681,7 @@ body::before {
 /* Placeholder styles - less visible */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #999999;
+    color: var(--text-secondary);
     opacity: 0.7;
     font-weight: 400;
 }
@@ -1693,7 +1693,7 @@ body::before {
 
 /* Select option styling for consistency */
 .form-group select option:first-child {
-    color: #999999;
+    color: var(--text-secondary);
     font-weight: 400;
 }
 
@@ -1710,7 +1710,7 @@ body::before {
     align-items: flex-start;
     gap: 12px;
     font-size: 14px;
-    color: #666666;
+    color: var(--text-secondary);
     cursor: pointer;
 }
 
@@ -1745,7 +1745,7 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     border: 2px solid transparent;
     text-decoration: none;
-    background: linear-gradient(135deg, #1a1a1a 0%, #ffffff 50%, #1a1a1a 100%);
+    background: var(--gradient-neon);
     background-size: 200% 200%;
     background-position: 0% 50%;
     transition: all 0.6s ease;
@@ -1760,7 +1760,7 @@ body::before {
     inset: 0;
     border-radius: inherit;
     padding: 2px;
-    background: linear-gradient(135deg, #333333 0%, #666666 50%, #333333 100%);
+    background: var(--gradient-neon);
     background-size: 200% 200%;
     background-position: 0% 50%;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -1835,7 +1835,7 @@ body::before {
 .info-detail {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 14px;
-    color: #666666;
+    color: var(--text-secondary);
 }
 
 .info-detail a {
@@ -1923,7 +1923,7 @@ body::before {
 
 .faq-icon svg {
     transition: transform 0.3s ease;
-    color: #666666;
+    color: var(--text-secondary);
 }
 
 .faq-question[aria-expanded="true"] .faq-icon svg {
@@ -1953,7 +1953,7 @@ body::before {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #666666;
+    color: var(--text-secondary);
     margin: 20px 0 0 0;
 }
 
@@ -2055,7 +2055,7 @@ body::before {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #cccccc;
+    color: var(--text-secondary);
 }
 
 .footer-column {
@@ -2080,7 +2080,7 @@ body::before {
 .footer-menu a {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 16px;
-    color: #cccccc;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -2098,7 +2098,7 @@ body::before {
 .footer-copyright {
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-size: 14px;
-    color: #999999;
+    color: var(--text-secondary);
 }
 
 /* Mobile Responsive */
