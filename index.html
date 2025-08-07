@@ -317,20 +317,141 @@
             <span class="title-serif"> lavori</span>
           </h2>
           <p class="section-subtitle">
-            Esplora un esempio di progetto realizzato per studi professionali.
+            Esplora i progetti che abbiamo realizzato per studi professionali e business locali.
           </p>
         </div>
-        <!-- Showcase Card (singola, stile affiancato) -->
-        <div class="showcase-card showcase-card-suprema animate-appear delay-100">
-          <div class="showcase-images-suprema">
-            <img src="https://picsum.photos/seed/aretexstudio/340/440" alt="Suprema Desktop Preview" class="showcase-img-suprema desktop" width="340" height="440" loading="lazy" />
+        
+        <!-- Showcase Carousel -->
+        <div class="showcase-carousel-container animate-appear delay-100">
+          <!-- Navigation Buttons -->
+          <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Progetto precedente">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Progetto successivo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+          
+          <!-- Carousel Track -->
+          <div class="showcase-carousel" id="showcaseCarousel">
+            <div class="carousel-track" id="carouselTrack">
+              
+              <!-- Card 1: Studio Legale Milano -->
+              <div class="showcase-card">
+                <div class="showcase-image">
+                  <img src="https://picsum.photos/seed/legale-milano/380/280" alt="Studio Legale Milano" loading="lazy" />
+                  <div class="showcase-category">Studio Legale</div>
+                </div>
+                <div class="showcase-content">
+                  <h3 class="showcase-title">Studio Legale Milano</h3>
+                  <p class="showcase-description">Sito professionale per uno studio legale specializzato in diritto commerciale e societario.</p>
+                  <div class="showcase-tags">
+                    <span class="tag">Diritto Commerciale</span>
+                    <span class="tag">Professionale</span>
+                  </div>
+                  <a href="#" class="showcase-btn">Scopri di più</a>
+                </div>
+              </div>
+              
+              <!-- Card 2: Commercialista Roma -->
+              <div class="showcase-card">
+                <div class="showcase-image">
+                  <img src="https://picsum.photos/seed/commercialista-roma/380/280" alt="Studio Commercialista Roma" loading="lazy" />
+                  <div class="showcase-category">Commercialista</div>
+                </div>
+                <div class="showcase-content">
+                  <h3 class="showcase-title">Studio Fiscale Roma</h3>
+                  <p class="showcase-description">Piattaforma digitale per servizi fiscali e consulenza aziendale con area clienti riservata.</p>
+                  <div class="showcase-tags">
+                    <span class="tag">Fiscale</span>
+                    <span class="tag">Area Clienti</span>
+                  </div>
+                  <a href="#" class="showcase-btn">Scopri di più</a>
+                </div>
+              </div>
+              
+              <!-- Card 3: Notaio Venezia -->
+              <div class="showcase-card">
+                <div class="showcase-image">
+                  <img src="https://picsum.photos/seed/notaio-venezia/380/280" alt="Studio Notarile Venezia" loading="lazy" />
+                  <div class="showcase-category">Studio Notarile</div>
+                </div>
+                <div class="showcase-content">
+                  <h3 class="showcase-title">Studio Notarile Venezia</h3>
+                  <p class="showcase-description">Sito elegante per studio notarile con prenotazione appuntamenti online e servizi digitali.</p>
+                  <div class="showcase-tags">
+                    <span class="tag">Prenotazioni</span>
+                    <span class="tag">Servizi Digitali</span>
+                  </div>
+                  <a href="#" class="showcase-btn">Scopri di più</a>
+                </div>
+              </div>
+              
+              <!-- Card 4: Consulente del Lavoro -->
+              <div class="showcase-card">
+                <div class="showcase-image">
+                  <img src="https://picsum.photos/seed/consulente-lavoro/380/280" alt="Consulente del Lavoro" loading="lazy" />
+                  <div class="showcase-category">Consulente del Lavoro</div>
+                </div>
+                <div class="showcase-content">
+                  <h3 class="showcase-title">Consulente del Lavoro</h3>
+                  <p class="showcase-description">Piattaforma completa per gestione HR, buste paga e consulenza lavorativa per PMI.</p>
+                  <div class="showcase-tags">
+                    <span class="tag">HR Management</span>
+                    <span class="tag">Buste Paga</span>
+                  </div>
+                  <a href="#" class="showcase-btn">Scopri di più</a>
+                </div>
+              </div>
+              
+              <!-- Card 5: Architetto Design -->
+              <div class="showcase-card">
+                <div class="showcase-image">
+                  <img src="https://picsum.photos/seed/architetto-design/380/280" alt="Studio Architettura" loading="lazy" />
+                  <div class="showcase-category">Architettura</div>
+                </div>
+                <div class="showcase-content">
+                  <h3 class="showcase-title">Studio Architettura</h3>
+                  <p class="showcase-description">Portfolio moderno per studio di architettura con galleria progetti e sistema preventivi.</p>
+                  <div class="showcase-tags">
+                    <span class="tag">Portfolio</span>
+                    <span class="tag">Preventivi Online</span>
+                  </div>
+                  <a href="#" class="showcase-btn">Scopri di più</a>
+                </div>
+              </div>
+              
+              <!-- Card 6: Medico Estetico -->
+              <div class="showcase-card">
+                <div class="showcase-image">
+                  <img src="https://picsum.photos/seed/medico-estetico/380/280" alt="Clinica Estetica" loading="lazy" />
+                  <div class="showcase-category">Medicina Estetica</div>
+                </div>
+                <div class="showcase-content">
+                  <h3 class="showcase-title">Clinica Estetica</h3>
+                  <p class="showcase-description">Sito premium per clinica di medicina estetica con booking online e gallery trattamenti.</p>
+                  <div class="showcase-tags">
+                    <span class="tag">Booking</span>
+                    <span class="tag">Premium</span>
+                  </div>
+                  <a href="#" class="showcase-btn">Scopri di più</a>
+                </div>
+              </div>
+              
+            </div>
           </div>
-          <div class="showcase-info-suprema">
-            <h3 class="showcase-title-suprema title-serif">Suprema</h3>
-            <p class="showcase-description-suprema">
-              Create a clear roadmap, track progress, and smoothly guide your project from idea to successful launch.
-            </p>
-            <a href="#" class="showcase-btn-suprema">Open Website</a>
+          
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators" id="carouselIndicators">
+            <button class="indicator active" data-slide="0"></button>
+            <button class="indicator" data-slide="1"></button>
+            <button class="indicator" data-slide="2"></button>
+            <button class="indicator" data-slide="3"></button>
+            <button class="indicator" data-slide="4"></button>
+            <button class="indicator" data-slide="5"></button>
           </div>
         </div>
       </div>

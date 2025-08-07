@@ -713,63 +713,121 @@ class NewStyleSite {
      * Setup showcase carousel functionality
      */
     setupShowcaseCarousel() {
-        const carousel = document.querySelector('.showcase-carousel');
-        const dotsContainer = document.querySelector('.carousel-dots');
-        const dots = document.querySelectorAll('.carousel-dots .dot');
+        const track = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
+        const indicators = document.querySelectorAll('.indicator');
+        const cards = document.querySelectorAll('.showcase-card');
 
-        if (!carousel || !dotsContainer || dots.length === 0) return;
+        if (!track || !prevBtn || !nextBtn || indicators.length === 0) return;
 
-        let currentSlide = 0;
-        let autoScrollInterval;
+        let currentIndex = 0;
+        const totalCards = cards.length;
+        const cardWidth = 380 + 30; // card width + gap
+        let autoPlayInterval;
 
-        const scrollToSlide = (index) => {
-            carousel.scrollLeft = carousel.offsetWidth * index;
-        };
-
-        const updateDots = () => {
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
+        const updateCarousel = () => {
+            const translateX = -(currentIndex * cardWidth);
+            track.style.transform = `translateX(${translateX}px)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
             });
         };
 
-        const handleScroll = () => {
-            const scrollLeft = carousel.scrollLeft;
-            const slideWidth = carousel.offsetWidth;
-            currentSlide = Math.round(scrollLeft / slideWidth);
-            updateDots();
+        const goToSlide = (index) => {
+            currentIndex = Math.max(0, Math.min(index, totalCards - 1));
+            updateCarousel();
         };
 
-        const startAutoScroll = () => {
-            clearInterval(autoScrollInterval);
-            autoScrollInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % dots.length;
-                scrollToSlide(currentSlide);
-            }, 5000); // Change slide every 5 seconds
+        const nextSlide = () => {
+            currentIndex = currentIndex >= totalCards - 1 ? 0 : currentIndex + 1;
+            updateCarousel();
         };
 
-        const stopAutoScroll = () => {
-            clearInterval(autoScrollInterval);
+        const prevSlide = () => {
+            currentIndex = currentIndex <= 0 ? totalCards - 1 : currentIndex - 1;
+            updateCarousel();
         };
 
-        // Event Listeners
-        dotsContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('dot')) {
-                const slideIndex = parseInt(e.target.dataset.slide);
-                currentSlide = slideIndex;
-                scrollToSlide(currentSlide);
-                stopAutoScroll();
-                startAutoScroll();
-            }
+        const startAutoPlay = () => {
+            autoPlayInterval = setInterval(nextSlide, 4000);
+        };
+
+        const stopAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+        };
+
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 3000);
         });
 
-        carousel.addEventListener('scroll', this.throttle(handleScroll, 100));
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 3000);
+        });
 
-        carousel.addEventListener('mouseover', stopAutoScroll);
-        carousel.addEventListener('mouseleave', startAutoScroll);
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+                stopAutoPlay();
+                setTimeout(startAutoPlay, 3000);
+            });
+        });
 
-        // Initial setup
-        updateDots();
-        startAutoScroll();
+        // Touch/swipe support
+        let startX = 0;
+        let isDragging = false;
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            stopAutoPlay();
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+
+        track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            
+            setTimeout(startAutoPlay, 2000);
+        });
+
+        // Pause autoplay on hover
+        const carouselContainer = document.querySelector('.showcase-carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+            carouselContainer.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // Initialize
+        updateCarousel();
+        startAutoPlay();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            updateCarousel();
+        });
     }
 }
 
