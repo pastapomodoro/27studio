@@ -87,10 +87,10 @@ class NewStyleSite {
             const currentScrollY = window.scrollY;
             
             if (currentScrollY > 50) {
-                navbar.style.background = 'rgba(243, 241, 234, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                navbar.style.background = 'rgba(26, 31, 61, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(61, 82, 213, 0.2)';
             } else {
-                navbar.style.background = 'rgba(243, 241, 234, 0.95)';
+                navbar.style.background = 'rgba(26, 31, 61, 0.95)';
                 navbar.style.boxShadow = 'none';
             }
 

@@ -10,19 +10,19 @@ html {
 
 /* Custom CSS Variables for ELECTRIC NEON VIBES */
 :root {
-    --bg-primary: #0d1b3d;      /* Blu scuro basato su 3d52d5 */
-    --bg-secondary: #1a2954;    /* Blu medio */
-    --bg-tertiary: #2a3a6b;     /* Blu più chiaro */
-    --bg-card: rgba(26, 41, 84, 0.85);  /* Card con blu trasparente */
+    --bg-primary: #1a1f3d;      /* Basato su blu elettrico #3d52d5 */
+    --bg-secondary: #2a2f52;    /* Blu elettrico medio */
+    --bg-tertiary: #3d52d5;     /* Blu elettrico principale dalla palette */
+    --bg-card: rgba(61, 82, 213, 0.15);  /* Card trasparente blu elettrico */
     --text-primary: #ffffff;     /* Testo bianco per contrasto */
-    --text-secondary: #e6ecff;   /* Testo secondario con tinta blu */
+    --text-secondary: #e6ecff;   /* Testo secondario pulito */
     --accent-neon: #39ff14;
     --accent-yellow: #dfff00;
     --accent-blue: #5a6ff0;
     --accent-electric: #3d52d5;
-    --gradient-neon: linear-gradient(135deg, #5a6ff0 0%, #39ff14 50%, #dfff00 100%);  /* Blu principal + verde + giallo */
-    --gradient-electric: linear-gradient(135deg, #3d52d5 0%, #5a6ff0 50%, #39ff14 100%);  /* Blu scuro + blu + verde */
-    --gradient-background: linear-gradient(135deg, #0d1b3d 0%, #1a2954 25%, #2a3a6b 50%, #1a2954 100%);  /* Background blu basato sulla palette */
+    --gradient-neon: linear-gradient(135deg, #3d52d5 0%, #5a6ff0 100%);  /* Blu elettrico pulito */
+    --gradient-electric: linear-gradient(135deg, #3d52d5 0%, #5a6ff0 100%);  /* Blu elettrico pulito */
+    --gradient-background: linear-gradient(135deg, #1a1f3d 0%, #2a2f52 50%, #3d52d5 100%);  /* Background blu elettrico */
     --shadow-neon: 0 0 20px rgba(57, 255, 20, 0.6);
     --shadow-yellow: 0 0 25px rgba(223, 255, 0, 0.5);
     --shadow-blue: 0 0 30px rgba(90, 111, 240, 0.5);
@@ -115,15 +115,13 @@ body::before {
     }
 }
 
-/* Gradiente animato per i titoli principali */
+/* Gradiente animato per i titoli principali - BLU ELETTRICO */
 .hero-title, .section-title {
     background: linear-gradient(45deg, 
-        var(--accent-neon) 0%, 
-        var(--accent-blue) 25%, 
-        var(--accent-purple) 50%, 
-        var(--accent-electric) 75%, 
+        var(--accent-electric) 0%, 
+        var(--accent-blue) 50%, 
         var(--accent-neon) 100%);
-    background-size: 400% 400%;
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -139,17 +137,26 @@ body::before {
     }
 }
 
+@keyframes subtleGradientMove {
+    0% {
+        background: linear-gradient(45deg, rgba(61, 82, 213, 0.05) 0%, rgba(57, 255, 20, 0.03) 100%);
+    }
+    100% {
+        background: linear-gradient(45deg, rgba(57, 255, 20, 0.03) 0%, rgba(61, 82, 213, 0.05) 100%);
+    }
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(26, 26, 26, 0.9);
+    background: rgba(26, 31, 61, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 2px solid var(--accent-neon);
     z-index: 1000;
-    padding: 6px 0;
+    padding: 0;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation: navElectricGlow 4s ease-in-out infinite alternate;
 }
@@ -170,20 +177,20 @@ body::before {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
+    justify-content: center;
+    padding: 10px 24px;
 }
 
 .nav-brand {
     display: flex;
     align-items: center;
-    height: 56px;
+    height: auto;
 }
 
 .logo-img {
-    height: 40px;
+    height: 70px;
     width: auto;
-    margin-right: 20px;
+    margin-right: 0;
     vertical-align: middle;
     display: block;
 }
@@ -209,7 +216,7 @@ body::before {
 
 /* Hamburger Menu - hidden by default on desktop */
 .hamburger-btn {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -217,6 +224,8 @@ body::before {
     height: 40px;
     background: none;
     border: none;
+    position: absolute;
+    right: 24px;
     cursor: pointer;
     padding: 0;
     gap: 4px;
@@ -346,9 +355,7 @@ body::before {
 }
 
 .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+    display: none;
 }
 
 .nav-link {
@@ -508,11 +515,11 @@ body::before {
     text-decoration: none;
     margin-bottom: 80px;
     background: linear-gradient(45deg, 
-        var(--accent-neon) 0%, 
+        var(--accent-electric) 0%, 
         var(--accent-blue) 25%, 
-        var(--accent-purple) 50%, 
-        var(--accent-electric) 75%, 
-        var(--accent-neon) 100%);
+        var(--accent-neon) 50%, 
+        var(--accent-blue) 75%, 
+        var(--accent-electric) 100%);
     background-size: 400% 400%;
     background-position: 0% 50%;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -905,16 +912,16 @@ body::before {
 }
 
 .feature-card {
-    background: var(--bg-card);
-    border-radius: 25px;
+    background: rgba(61, 82, 213, 0.1);
+    border-radius: 20px;
     padding: 40px 32px;
     text-align: center;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid rgba(0, 255, 136, 0.2);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(61, 82, 213, 0.2);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(61, 82, 213, 0.15);
+    backdrop-filter: blur(15px);
     z-index: 1;
 }
 
@@ -925,18 +932,17 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--gradient-electric);
+    background: linear-gradient(45deg, rgba(61, 82, 213, 0.05) 0%, rgba(57, 255, 20, 0.03) 100%);
+    animation: subtleGradientMove 8s ease-in-out infinite alternate;
     z-index: -1;
     border-radius: 20px;
 }
 
 .feature-card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 
-        0 0 40px rgba(0, 255, 136, 0.4),
-        0 30px 60px rgba(0, 0, 0, 0.4);
-    border-color: var(--accent-neon);
-    background: rgba(42, 42, 42, 0.9);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(61, 82, 213, 0.25);
+    border-color: var(--accent-electric);
+    background: rgba(61, 82, 213, 0.15);
 }
 
 .feature-card::after {
@@ -1017,7 +1023,7 @@ body::before {
 /* Process Section */
 .process-section {
     padding: 120px 0;
-    background: var(--gradient-electric);
+    background: linear-gradient(135deg, #1a1f3d 0%, #2a2f52 30%, #3d52d5 60%, #5a6ff0 100%);
 }
 
 .process-grid {
@@ -1036,7 +1042,7 @@ body::before {
     padding: 40px 30px;
     text-align: center;
     position: relative;
-    border: 2px solid rgba(0, 255, 136, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     overflow: hidden;
@@ -1900,7 +1906,7 @@ body::before {
 /* Contact Section */
 .contact-section {
     padding: 120px 0;
-    background: var(--gradient-electric);
+    background: linear-gradient(135deg, #1a1f3d 0%, #2a2f52 30%, #3d52d5 60%, #5a6ff0 100%);
 }
 
 .contact-content {
@@ -1915,6 +1921,7 @@ body::before {
     border-radius: 24px;
     padding: 48px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Form Progress */
@@ -2137,6 +2144,7 @@ body::before {
     align-items: center;
     gap: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -2181,7 +2189,7 @@ body::before {
 /* FAQ Section */
 .faq-section {
     padding: 80px 0;
-    background: var(--gradient-electric);
+    background: linear-gradient(135deg, #1a1f3d 0%, #2a2f52 30%, #3d52d5 60%, #5a6ff0 100%);
 }
 
 .faq-container {
@@ -2197,6 +2205,7 @@ body::before {
     background: var(--bg-card);
     border-radius: 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 0;
     transition: all 0.3s ease;
     overflow: hidden;
@@ -2241,12 +2250,12 @@ body::before {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: var(--gradient-electric);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
     transition: all 0.3s ease;
 }
 
 .faq-question:hover .faq-icon {
-    background: #e0dcd1;
+    background: linear-gradient(135deg, #e6f3ff 0%, #b3d9ff 100%);
     transform: scale(1.05);
 }
 
@@ -2806,13 +2815,16 @@ body::before {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 2px 0;
+        padding: 0;
+    }
+    .nav-container {
+        padding: 8px 24px;
     }
     .logo-img {
-        height: 32px;
+        height: 60px;
     }
     .nav-brand {
-        height: 40px;
+        height: auto;
     }
     .logo-text {
         font-size: 18px;
