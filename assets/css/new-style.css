@@ -10,19 +10,19 @@ html {
 
 /* Custom CSS Variables for ELECTRIC NEON VIBES */
 :root {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
-    --bg-tertiary: #404040;
-    --bg-card: #eaeaea;
-    --text-primary: #1a1a1a;
-    --text-secondary: #3d52d5;
+    --bg-primary: #0d1b3d;      /* Blu scuro basato su 3d52d5 */
+    --bg-secondary: #1a2954;    /* Blu medio */
+    --bg-tertiary: #2a3a6b;     /* Blu più chiaro */
+    --bg-card: rgba(26, 41, 84, 0.85);  /* Card con blu trasparente */
+    --text-primary: #ffffff;     /* Testo bianco per contrasto */
+    --text-secondary: #e6ecff;   /* Testo secondario con tinta blu */
     --accent-neon: #39ff14;
     --accent-yellow: #dfff00;
     --accent-blue: #5a6ff0;
     --accent-electric: #3d52d5;
-    --gradient-neon: linear-gradient(135deg, #39ff14 0%, #dfff00 50%, #5a6ff0 100%);
-    --gradient-electric: linear-gradient(135deg, #3d52d5 0%, #5a6ff0 50%, #39ff14 100%);
-    --gradient-background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #404040 50%, #2d2d2d 100%);
+    --gradient-neon: linear-gradient(135deg, #5a6ff0 0%, #39ff14 50%, #dfff00 100%);  /* Blu principal + verde + giallo */
+    --gradient-electric: linear-gradient(135deg, #3d52d5 0%, #5a6ff0 50%, #39ff14 100%);  /* Blu scuro + blu + verde */
+    --gradient-background: linear-gradient(135deg, #0d1b3d 0%, #1a2954 25%, #2a3a6b 50%, #1a2954 100%);  /* Background blu basato sulla palette */
     --shadow-neon: 0 0 20px rgba(57, 255, 20, 0.6);
     --shadow-yellow: 0 0 25px rgba(223, 255, 0, 0.5);
     --shadow-blue: 0 0 30px rgba(90, 111, 240, 0.5);
